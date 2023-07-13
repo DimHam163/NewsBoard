@@ -1,0 +1,24 @@
+{% extends "default.html" %}
+
+{% block title %}
+    {{ announcement.title }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ announcement.title }}</h1>
+      {% if announcement.image %}
+    <p><img src="{{ announcement.image.url }}"></p>
+{% endif %}
+  {{ announcement.text }}
+    <p><a href="{% url 'board:ann_update' pk=announcement.pk %}"><input type="submit" value="Редактировать" /></a></p>
+    <p><a href="{% url 'board:comment' pk=announcement.pk %}"><input type="submit" value="Отправить отклик" /></a></p>
+{% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Отклик от {{ comment.announcement.author }}
+        Добавлен {{ comment.created }}
+      </p>
+      {{ comment.text|linebreaks }}
+    </div>
+{% endfor %}
+{% endblock %}

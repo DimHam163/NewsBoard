@@ -1,0 +1,225 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, sans-serif;
+    background-color: rgb(43, 114, 87);
+}
+
+a {
+    color: rgb(9, 76, 96);
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: normal;
+    border-bottom: 1px solid #bbb;
+    padding: 0 0 10px 0;
+}
+
+h2 {
+    font-weight: normal;
+    margin: 30px 0 0;
+}
+
+#content {
+    float: left;
+    width: 60%;
+    padding: 0 0 0 30px;
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+    padding: 10px;
+    background: #ffffff;
+    height: 100%;
+    margin-top: 30px;
+}
+
+p {
+    color: #030303;
+}
+
+p.date {
+    color: #030303;
+    font-family: georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* pagination */
+.pagination {
+    margin: 40px 0;
+    font-weight: bold;
+    color: #030303;
+}
+
+/* forms */
+label {
+    float: left;
+    clear: both;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+input, textarea {
+    clear: both;
+    float: left;
+    margin: 0 0 10px;
+    background: #e1dbdb;
+    border: 0;
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+input[type=submit] {
+    font-weight: bold;
+    background: rgba(11, 141, 76, 0.79);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    float: inherit;
+}
+
+input[type=reset] {
+    font-weight: bold;
+    background: rgb(229, 7, 7);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    float: inherit;
+}
+
+.errorlist {
+    color: #cc0033;
+    float: left;
+    clear: both;
+    padding-left: 10px;
+}
+
+/* comments */
+.comment {
+    padding: 10px;
+}
+
+.comment:nth-child(even) {
+    background: #efefef;
+}
+
+.comment .info {
+    font-weight: bold;
+    font-size: 12px;
+    color: #666;
+}
+
+h1.title-main {
+    color: #0d812d;
+    text-align: center;
+}
+
+#header {
+    background: #666769;
+    overflow: auto;
+    padding: 10px 20px;
+}
+
+#header .logo {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #fff;
+    float: left;
+}
+
+#header a {
+    color: #d7d3d3;
+}
+
+#header .menu {
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+
+}
+
+/* messages */
+ul.messages {
+    margin: 10px 100px;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.messages li.success,
+ul.messages li.warning,
+ul.messages li.error,
+ul.messages li.info {
+    margin: 0;
+    padding: 14px 20px;
+    list-style: none;
+    color: #fff;
+}
+
+ul.messages li.success {
+    background: #6677ce;
+}
+
+ul.messages li.success a {
+    color: #0ac33e;
+}
+
+ul.messages li.error {
+    background: #a30029;
+    color: #3e456b;
+}
+
+ul.messages li.error a {
+    color: #af1023;
+}
+
+ul.messages li.info {
+    background: #faffae;
+    color: #696b4e;
+}
+
+ul.messages li.info a {
+    color: #1586de;
+}
+
+ul.messages li.warning {
+    background: #de040b;
+}
+
+ul.messages li.warning a {
+    color: #f4001c;
+}
+
+ul.messages li a.close {
+    margin: 0;
+    float: right;
+    opacity: 1;
+    border: 0;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#footer {
+    box-sizing: border-box;
+
+    background: #022d46;
+    padding: 5px;
+    color: #282525;
+    font-size: 14px;
+    font-family: 'Oriya MN';
+    text-align: -webkit-left;
+    overflow: hidden;
+}
+
+#footer a {
+    text-decoration: underline;
+    color: #3f3b3b;
+}

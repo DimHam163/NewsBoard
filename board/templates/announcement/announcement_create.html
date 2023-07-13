@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html> <html>
+<head>
+<title>
+    {% block title %}
+    {% endblock %}
+</title>
+<link href="{% static "styleforms.css" %}" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+      <a href="{% url "board:announcement_list" %}" class="logo">Доска Объявлений</a>
+      <ul class="menu">
+{% if request.user.is_authenticated %}
+    <a href="{% url 'board:ann_create' %}">Создать объявление</a>
+    <a href="{% url 'account_logout' %}">Выйти</a>
+{% else %}
+    <a href="{% url 'account_login' %}" >Вход</a>   <a href="{% url 'account_signup' %}" >Регистрация</a>
+{% endif %}
+      </ul>
+    </div>
+    {% block content %}
+<h1> Вснесите данные в объявление:</h1>
+<hr>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Создать" />
+</form>
+{% endblock content %}

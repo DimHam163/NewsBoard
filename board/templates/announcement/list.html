@@ -1,0 +1,47 @@
+{% extends "default.html" %}
+
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% for announcement in announcements %}
+    <h2>
+      <a href="{{ announcement.get_absolute_url }}">
+        {{ announcement.title }}
+      </a>
+     <p class="date">
+    Опубликовано {{ announcement.publish }} пользователем: {{ announcement.author }}</p>
+    <p class="date">
+    Категория {{ announcement.category }}
+     </p>
+  {% if announcement.image %}
+    <p><img src="{{ announcement.image.url }}"></p>
+{% endif %}
+        <p>
+    {{ announcement.text|truncatewords:20 }}
+            </p>
+    </h2>
+    <hr>
+    {% endfor %}
+       {% if page_obj.has_previous %}
+       <a href="?page=1">1</a>
+       {% if page_obj.previous_page_number != 1 %}
+           ...
+           <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+       {% endif %}
+   {% endif %}
+
+   {# Информация о текущей странице #}
+   {{ page_obj.number }}
+
+   {# Информация о следующих страницах #}
+   {% if page_obj.has_next %}
+       <a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           ...
+           <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+       {% endif %}
+   {% endif %}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link href="{% static "style.css" %}" rel="stylesheet">
+</head>
+<body>
+<div id="header">
+    <a href="{% url "board:announcement_list" %}" class="logo">Доска объявлений</a>
+    <ul class="menu">
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'board:ann_create' %}">Создать объявление | </a>
+            <a href="{% url 'board:comment_list' %}"> Отклики | </a>
+            <a href="{% url 'account_logout' %}">Выйти</a>
+        {% else %}
+            <a href="{% url 'account_login' %}">Вход</a>   <a href="{% url 'account_signup' %}">Регистрация</a>
+        {% endif %}
+    </ul>
+</div>
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">
+                {{ message|safe }}
+                <a href="{% url "board:announcement_list" %}" class="close">Объявления</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

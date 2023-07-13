@@ -1,0 +1,22 @@
+{% extends 'default.html' %}
+
+{% block content %}
+{% if comment_list %}
+    {% for c in comment_list %}
+        {% if c.status == True or c.status is None %}
+            <p>{{ c.created|date:'d.m.y' }}</p>
+            <p>{{ c.text }}</p>
+            <p>Отклик на "{{ c.announcement.title }}" от пользователя {{ c.user }}</p>
+                {% if c.status == True %}
+                    <p>{{ c.text }}</p>
+                {% else %}
+                    <a href="{% url 'board:accept' pk=c.pk %}"><input type="submit" value="Принять" />
+                    <a href="{% url 'board:deny' pk=c.pk %}"><input type="reset" value="Отклонить" />
+                {% endif %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <h1>Откликов нет</h1>
+{% endif %}
+{% endblock content %}

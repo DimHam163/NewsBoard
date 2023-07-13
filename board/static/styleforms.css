@@ -1,0 +1,35 @@
+#header {
+    background: #b3b5bb;
+    overflow:auto;
+    padding:10px 20px;
+}
+
+#header .logo {
+    text-decoration:none;
+    font-family:'Roboto', sans-serif;
+    font-weight:300;
+    text-transform:uppercase;
+    font-size:24px;
+    color:#fff;
+    float:left;
+}
+
+#header a {
+    color: #0e2183;
+}
+
+#header .menu {
+    list-style:none;
+    float:right;
+    margin:0;
+    padding:0;
+}
+
+input[type=submit] {
+    font-weight:bold;
+    background: rgba(11, 76, 141, 0.79);
+    color:#fff;
+    padding:10px 20px;
+    font-size:14px;
+    text-transform:uppercase;
+}
